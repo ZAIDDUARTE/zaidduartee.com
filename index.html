@@ -17,6 +17,8 @@
     }
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -509,13 +511,45 @@
 </div>
 
 
-      <div class="text-center mt-12">
-        <a href="#" class="bg-purple-custom text-white px-8 py-4 rounded-lg font-medium hover:bg-purple-700 transition inline-flex items-center space-x-2">
-          <span>View All Projects</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
+ 
+
     </div>
+
+         <div class="text-center mt-12" x-data="{ open: false }">
+  <!-- Toggle Button -->
+  <button @click="open = !open"
+    class="bg-purple-custom text-white px-8 py-4 rounded-lg font-medium hover:bg-purple-700 transition inline-flex items-center space-x-2 focus:outline-none">
+    <span>View All Projects</span>
+    <i class="fas fa-arrow-right" :class="{ 'rotate-90': open }" class="transition-transform"></i>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div x-show="open" x-transition class="mt-4 w-full max-w-xl mx-auto bg-white shadow-lg rounded-xl border border-gray-200 text-left">
+    <ul class="divide-y divide-gray-200 text-gray-700 text-sm">
+      <li>
+        <a href="https://neon-artist.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">Neon Artist (Ecommerce Website)</a>
+      </li>
+      <li>
+        <a href="https://car-rental-website-pi-six.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">Car Rental Showroom (Showroom Website)</a>
+      </li>
+      <li>
+        <a href="https://catering-page-sample-2.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">Catering Page Sample (Restaurant Website)</a>
+      </li>
+      <li>
+        <a href="https://z-duarte-bootstrap.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">Agency Web (Agency Website)</a>
+      </li>
+      <li>
+        <a href="https://kingskingdom.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">King's Kingdom (Theme Park Website)</a>
+      </li>
+      <li>
+        <a href="https://html-css-js-portfolio-tutorial-2-main-indol.vercel.app/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">Portfolio Website</a>
+      </li>
+      <li>
+        <a href="https://www.dwaste.live/" target="_blank" class="block px-6 py-3 hover:bg-purple-50 hover:text-purple-custom transition">D-Waste (Modern Website)</a>
+      </li>
+    </ul>
+  </div>
+</div>
   </section>
 
  <!-- Testimonials Section -->
@@ -760,6 +794,9 @@
       </nav> -->
     </div>
   </div>
+
+
+  
 
   <!-- JS for Mobile Menu -->
   <script>
